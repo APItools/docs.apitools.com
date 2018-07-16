@@ -1,0 +1,64 @@
+<nav class="sidenav docsnav">
+  <div id="search">
+    <form action="/search" method="get">
+      <input class="form-input search-input" type="text" id="search-query"
+             name="q" placeholder="Search..." autocomplete="off">
+    </form>
+  </div>
+
+  <section id="search-results" style="display: none;">
+    <h4>Search results</h4>
+    <ul class="docsnav-entries">
+    </ul>
+  </section>
+
+  <ul class="nav-list docsnav-section">
+    <li>
+      <a class="{% if (page.url == '/docs/getting-started/index.html') %} active {%endif %}"
+         href="/docs/getting-started/">Getting Started</a>
+    </li>
+    <li>
+      <a class="{% if (page.url == '/docs/test-debug/index.html') %}
+        active {%endif %}" href="/docs/test-debug/">Test & Debug</a>
+    </li>
+    <li>
+      <a class="{% if (page.url == '/docs/middleware/index.html') %}
+        active {%endif %}" href="/docs/middleware/">Middleware</a>
+    </li>
+    <li>
+      <a class="{% if (page.url == '/docs/analytics/index.html') %}
+        active {%endif %}" href="/docs/analytics/">Analytics</a>
+    </li>
+    <li>
+      <a class="{% if (page.url == '/docs/on-premise/index.html') %}
+        active {%endif %}" href="/docs/on-premise/">On-premise</a>
+    </li>
+    <li>
+      <a class="{% if (page.url == '/docs/hackathons/index.html') %}
+        active {%endif %}" href="/docs/hackathons/">Hackathons</a>
+    </li>
+    <li>
+      <a class="{% if (page.url == '/docs/notifications/index.html') %}
+        active {%endif %}" href="/docs/notifications/">Notifications</a>
+    </li>
+    <li>
+      <a class="{% if (page.url == '/docs/interactive-documentation/index.html') %}
+        active {%endif %}" href="/docs/interactive-documentation/">Interactive Docs</a>
+    </li>
+  </ul>
+</nav>
+
+{% raw %}
+<script id="search-results-template" type="text/mustache">
+  {{#entries}}
+    <li>
+      {{#categories}}<span class="badge">{{categories}}</span>{{/categories}}
+      <a href="{{url}}">{{title}}
+        {{#date}}<small>
+          <time datetime="{{pubdate}}" pubdate>{{displaydate}}</time>
+        </small>{{/date}}
+      </a>
+    </li>
+  {{/entries}}
+  </script>
+{% endraw %}

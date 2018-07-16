@@ -1,0 +1,38 @@
+<nav class="sidenav docsnav">
+  <div id="search">
+    <form action="/search" method="get">
+      <input class="form-input search-input" type="text" id="search-query"
+             name="q" placeholder="Search..." autocomplete="off">
+    </form>
+  </div>
+
+  <section id="search-results" style="display: none;">
+    <h4>Search results</h4>
+    <ul class="docsnav-entries">
+    </ul>
+  </section>
+
+  <h4>Tags</h4>
+  {% for tags in site.tags %}
+    <div style="float:left;margin-left:5px;font-size: {{ tags | last | size | times: 200 | divided_by: site.tags.size | plus: 80 }}%">
+        <a href="/tag/{{ tags | first | slugize }}/">
+          {{ tags | first }}
+        </a>
+    </div>
+  {% endfor %}
+</nav>
+
+{% raw %}
+<script id="search-results-template" type="text/mustache">
+  {{#entries}}
+    <li>
+      {{#categories}}<span class="badge">{{categories}}</span>{{/categories}}
+      <a href="{{url}}">{{title}}
+        {{#date}}<small>
+          <time datetime="{{pubdate}}" pubdate>{{displaydate}}</time>
+        </small>{{/date}}
+      </a>
+    </li>
+  {{/entries}}
+  </script>
+{% endraw %}

@@ -1,0 +1,8 @@
+/.idea
+/_site
+.bundle
+/config/database.yml
+/tmp
+/vendor/bundle
+.DS_Store
+.*.swp

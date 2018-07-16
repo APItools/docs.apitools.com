@@ -1,0 +1,25 @@
+name: APItools Documentation
+highligter: 'pygments'
+brain_url: https://www.apitools.com
+markdown: redcarpet
+redcarpet:
+  extensions:
+   - with_toc_data
+gems:
+  - jekyll-sitemap
+exclude:
+ - '*.yml'
+ - Gemfile
+ - Gemfile.lock
+ - Procfile
+ - Makefile
+ - Dockerfile
+ - '.*'
+ - vendor
+ - lib
+ - bower_components
+ - config
+ - config.ru
+ - README.md
+ - Rakefile
+ - tmp

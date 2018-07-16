@@ -1,0 +1,26 @@
+  <nav class="topnav">
+  <div class="wrapper">
+    <a class="topnav-brand" href="//apitools.com" title="APItools by 3scale">
+      <img src="/images/apitools-logo.png" alt='APItools' />
+    </a>
+    <div class="topnav-content" role="navigation">
+      <ul class="nav-list list-inline">
+        <li class="nav-item {% if page.layout == 'docs' %}active{% endif %}">
+          <a href="/docs/">Docs</a>
+        </li>
+        <li class="nav-item {% if page.layout == 'blog' %}active{% endif %}">
+          <a href="/blog/">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a href="https://www.apitools.com/apis/">APIs</a>
+        </li>
+        <li class="nav-item">
+          <a href="https://www.github.com/apitools/monitor">GitHub</a>
+        </li>
+      </ul>
+
+      <form id='embed-signup'
+            data-src="{{ site.brain_url }}/embed/signup?signup_origin=Docs"></form>
+    </div>
+  </div>
+</nav>
